@@ -1,0 +1,15 @@
+<style>
+    .post {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="post">
+    <h2>{{ptitle}}</h2>
+    <p>{{pbody}}</p>
+    <p>Posted by {{user.username}}</p>
+    <p>Posted on {{format_date createdAt}}</p>
+</div>
