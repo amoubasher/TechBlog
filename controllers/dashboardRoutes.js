@@ -1,4 +1,3 @@
-
 // Dashboard Routes
 // This is a set of routes that will be used to render the dashboard pages.
 // All of these routes will be protected by the withAuth middleware function.
@@ -29,8 +28,8 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 
-router.get("/create", withAuth, async (req, res) => {
-  res.render("admin-create-post", { layout: "dashboard" });
+router.get("/new", withAuth, async (req, res) => {
+  res.render("new-post", { layout: "dashboard" });
 });
 
 
@@ -58,6 +57,12 @@ router.get("/create", withAuth, async (req, res) => {
 
 // TODO - create logic for the GET route for /edit/:id that renders the edit post page
 // It should display a form for editing an existing post
+
+router.get("/edit/:id", withAuth, async (req, res) => {
+  const postData = await Post.findByPk(req.params.id);
+  const post = postData.get({ plain: true });
+  res.render("admin-edit-post", { layout: "dashboard", post });
+});
 
 module.exports = router;
 
