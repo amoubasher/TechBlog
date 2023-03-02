@@ -1,5 +1,9 @@
-<form name="new-post" id="new-post" method="POST" action="/dashboard/create">
-    <input type="text" name="title" id="title" placeholder="Title" />
-    <textarea name="body" id="body" cols="30" rows="10"></textarea>
-    <button type="submit">Create Post</button>
+<form name= "new-post" id="new-post" method="POST" action="/api/post/" >
+    <p style=";font-weight:bolder; font-size:larger; margin-left:46%;">Title of post</p>
+    <input type="text" style="padding:5px;margin-left:44%;" name= "title" id="title" />
+    <br>
+    <p style="; font-weight:bolder; font-size:larger;margin-left:42%;">What would you like to say?</p>
+    <textarea name="body" id="body" cols="80" rows="10" style="padding:5px;margin-left:32%;"></textarea>
+    <br>
+    <button type="submit" class ="btn" style="padding:5px; margin-left:65%; margin-top:5px" id="submit">Create Post</button>
 </form>
